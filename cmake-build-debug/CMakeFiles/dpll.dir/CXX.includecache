@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/2020PA/DPLL.h
+common.h
+G:/2020PA/common.h
+
+G:/2020PA/DimacsParser.h
+iostream
+-
+fstream
+-
+cstdlib
+-
+cassert
+-
+common.h
+G:/2020PA/common.h
+
+G:/2020PA/common.h
+vector
+-
+unordered_map
+-
+string
+-
+sstream
+-
+
+G:/2020PA/main.cpp
+chrono
+-
+common.h
+G:/2020PA/common.h
+DimacsParser.h
+G:/2020PA/DimacsParser.h
+DPLL.h
+G:/2020PA/DPLL.h
+

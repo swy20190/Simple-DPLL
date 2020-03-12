@@ -1,0 +1,3 @@
+G:/2020PA/cmake-build-debug/CMakeFiles/dpll.dir
+G:/2020PA/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/2020PA/cmake-build-debug/CMakeFiles/rebuild_cache.dir

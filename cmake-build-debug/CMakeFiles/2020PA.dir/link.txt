@@ -1,0 +1,3 @@
+"G:\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\2020PA.dir/objects.a
+G:\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\ar.exe cr CMakeFiles\2020PA.dir/objects.a @CMakeFiles\2020PA.dir\objects1.rsp
+G:\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\2020PA.dir/objects.a -Wl,--no-whole-archive  -o 2020PA.exe -Wl,--out-implib,lib2020PA.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\2020PA.dir\linklibs.rsp
