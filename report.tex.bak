@@ -1,0 +1,33 @@
+\documentclass[UTF8]{article}
+\usepackage{ctex}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{Consolas}
+
+\begin{document}
+\author{隋唯一 2017011430}
+
+\title{DPLL 实验报告}
+\date{\today}
+\maketitle
+
+\section{实验目标}
+实现一个简单的DPLL算法，对输入的cnf范式判定其可满足性，并给出一个使其为真的解释。
+\section{2.11}
+The term relation refers to a set of tuples, which are instances of a specific schema. The schema, on the other hand, is the abstract structure of the tuples in a relation.
+\section{2.12}
+\subsection{a.}
+$$\Pi_{person\_name}(\sigma_{company\_name="First Bank Corporation"}(employee\bowtie{works}))$$
+\subsection{b.}
+$$\Pi_{person\_name,city}(\sigma_{company\_name="First Bank Corporation"}(employee\bowtie{works}))$$
+\subsection{c.}
+$$\Pi_{person\_name,street,city}(\sigma_{company\_name="First Bank Corporation"\wedge{salary>\$10000}}(employee\bowtie{works}))$$
+\section{2.13}
+\subsection{a.}
+$$\Pi_{loan\_number}(\sigma_{amount>\$10000}(loan))$$
+\subsection{b.}
+$$\Pi_{customer\_name}(\sigma_{balance>\$6000}(account\bowtie{depositor}))$$
+\subsection{c.}
+$$\Pi_{customer\_name}(\sigma_{balance>\$6000\wedge{branch\_name="Uptown"}}(account\bowtie{depositor}))$$
+
+\end{document}

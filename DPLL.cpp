@@ -9,15 +9,15 @@
 
 bool DPLL::check_sat() {
     // TODO: your code here, or in the header file
-    std::unordered_map<int,int> atomStatus;//记录节点状态0，1，2
-    int clause_num = phi.clauses.size();//子句数量
-    int atomNum = phi.num_variable;//变量数量
+    std::unordered_map<int,int> atomStatus;//0,1,2
+    int clause_num = phi.clauses.size();//number of clauses
+    int atomNum = phi.num_variable;//number of atoms
     for(int i=1;i<=atomNum;i++)
         result.insert(std::make_pair(i,true));
     int* nodeStatus = new int[atomNum];
     for(int i=0;i<atomNum;i++)
         nodeStatus[i]=0;
-    int ptr = 0;//指向当前节点
+    int ptr = 0;//point to current node
     while(true){
         if(nodeStatus[ptr]==2)
             break;
@@ -29,20 +29,20 @@ bool DPLL::check_sat() {
             nodeStatus[ptr]++;
             result[ptr + 1] = true;
         }
-        int solveStatus = 2;//0 肯定不是解，1 肯定是解，2 不确定
-        //检查是否是解
-        bool wholeValue = true;//整个式子的真值
-        for(int i=0;i<clause_num;i++) //每个子句
+        int solveStatus = 2;//0 :false sured,1:true sured,2:not sure t/f
+        //check the interpret
+        bool wholeValue = true;//the value of the whole cnf
+        for(int i=0;i<clause_num;i++) //for each clause
         {
-            bool currValue=false;//这个子句是不是假的
-            bool any_notsure=false;//有没有不确定的literature
+            bool currValue=false;//is the current clause false?
+            bool any_notsure=false;//any literature not sured?
             int len = phi.clauses[i].size();
             for(int j=0;j<len;j++)
             {
                 int currvar = phi.clauses[i][j];
                 if(VAR(currvar)<=ptr+1)
                 {
-                    if((POSITIVE(currvar)&&result[currvar])||(NEGATIVE(currvar)&&!result[VAR(currvar)])){//有一个为真，子句为真
+                    if((POSITIVE(currvar)&&result[currvar])||(NEGATIVE(currvar)&&!result[VAR(currvar)])){//one literature is true, then the whole clause is true
                         currValue=true;
                         break;
                     }
@@ -62,7 +62,7 @@ bool DPLL::check_sat() {
         }
         if(wholeValue)
             solveStatus=1;
-        //检查完毕
+        //check over
         if(solveStatus==0)//肯定不是解，回溯
         {
             while(ptr>0&&nodeStatus[ptr]==2)
